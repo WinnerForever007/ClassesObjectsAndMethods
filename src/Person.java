@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import business.Company;
 
 public class Person {
@@ -7,8 +8,9 @@ public class Person {
     static int[] nums;
     static String[] daysOfTheWeek = createDaysOfTheWeek();
     public static final int DAYS_IN_WEEK = 7;
-    String firstName;
-    String lastName;
+    private String firstName;
+    private String lastName;
+    private LocalDate dob;
     static int count = 0;
 
 
@@ -69,6 +71,12 @@ public class Person {
         count++;
     }
 
+    public Person(String firstName, String lastName, LocalDate dob) {
+        setFirstName(firstName);
+        setLastName(lastName);
+        this.dob = dob;
+    }
+
     public void introduce(String greeting, String... names) {
 
     }
@@ -102,5 +110,32 @@ public class Person {
         var name = "Jake";
         var company = new Company();
         String jake1 = "Jake1";
+    }
+
+    public String getFirstName() {
+        return firstName.substring(0, 1).toUpperCase() +
+                firstName.substring(1);
+    }
+
+    public void setFirstName(String firstName) {
+                this.firstName = firstName.substring(0, 1).toUpperCase() +
+                        firstName.substring(1);
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName.substring(0, 1).toUpperCase() +
+                lastName.substring(1);
+    }
+
+    public LocalDate getDob() {
+        return dob;
+    }
+
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
     }
 }

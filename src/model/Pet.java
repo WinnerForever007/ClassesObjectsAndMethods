@@ -37,4 +37,12 @@ public class Pet {
                 ", dob=" + dob +
                 '}';
     }
+
+    protected void protectedMethod() {
+        System.out.println("This is the protected method of Pet");
+    }
+
+    void packagePrivateMethod() {
+        System.out.println("This is the package-private method of Pet");
+    }
 }
